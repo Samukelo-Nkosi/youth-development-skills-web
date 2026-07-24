@@ -1,15 +1,17 @@
 /* General styling */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.6;
+    font-size: medium;
     color: #333;
 }
 
 header {
-    background-color: #0077b6;
+    background-color: #00992ec5;
     color: white;
     padding: 1em 0;
+    size: 50px;
     text-align: center;
 }
 
@@ -46,22 +48,24 @@ nav ul li a.active {
 #home .btn {
     display: inline-block;
     margin-top: 20px;
-    background-color: #0096c7;
+    background-color: #00992ec5;
     color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 20px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 #home .btn:hover {
-    background-color: #023e8a;
+    background-color: #00992ec5;
 }
 
 /* Programs Section */
 #programs {
+    background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') no-repeat center/cover;
     padding: 60px 20px;
-    background-color: #ffffff;
+    color: white;
+    background-color: #000000;
     text-align: center;
 }
 
@@ -69,11 +73,12 @@ nav ul li a.active {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    color: #000000;
     gap: 20px;
 }
 
 .program-card {
-    background: white;
+    background: #ffffffc5;
     padding: 20px;
     border-radius: 10px;
     width: 280px;
@@ -81,17 +86,20 @@ nav ul li a.active {
 }
 
 .program-card h3 {
-    color: #0077b6;
+    color: #00992ec5;
 }
 
 /* Contact Section */
 #contact {
-    padding: 60px 20px;
+    background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') no-repeat center/cover;
+    padding: 40px 10px;
+    color: rgb(252, 251, 251);
     text-align: center;
+    text-indent: #ffffffc5;
 }
 
 form {
-    max-width: 500px;
+    max-width: 300px;
     margin: auto;
 }
 
@@ -104,24 +112,24 @@ input, textarea {
 }
 
 button {
-    background-color: #0077b6;
+    background-color: #00992ec5;
     color: white;
-    border: none;
+    border: transparent;
     padding: 10px 25px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #023e8a;
+    background-color: #00992ec5;
 }
 
 /* Footer */
 footer {
-    background-color: #023e8a;
+    background-color: #00992ec5;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 7px;
 }
 
 /* Responsive Design */
@@ -134,28 +142,32 @@ footer {
 
 /* About Section */
 #about {
+    background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') no-repeat center/cover;
     padding: 60px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
 
 .about-container {
+    color: #f9f9f9;
     max-width: 1000px;
     margin: auto;
 }
 
 .about-container h2 {
-    color: #0077b6;
+    color: antiquewhite;
     margin-bottom: 20px;
 }
 
 .about-container p {
+    color: #020202c5;
     font-size: 1.1em;
     margin-bottom: 20px;
 }
 
 .about-grid {
     display: flex;
+    color: #111010;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -167,13 +179,13 @@ footer {
     padding: 20px;
     border-radius: 10px;
     width: 280px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(252, 251, 251, 0.301);
     text-align: left;
 }
 
 .about-card h3 {
-    color: #0077b6;
-    margin-bottom: 10px;
+    color: #00992ec5;
+    margin-bottom: 8px;
 }
 
 .about-card ul {
