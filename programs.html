@@ -10,7 +10,12 @@
     <header>
         <h1>Youth Skills Development</h1>
         <nav>
-            <ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="programs.html" class="active">Programs</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -21,32 +26,118 @@
 
     <section id="programs">
         <h2>Our Programs</h2>
+        <p class="programs-intro">Hands-on training designed to build real, employable skills — pick a path and get started.</p>
+
         <div class="program-container">
 
             <div class="program-card">
-                <h3><a href="https://digitalskillsafrica.org/">Digital Skills</a></h3>
-                <p>Learn coding, web design, and digital marketing to thrive in the modern workplace, in association with digital skills africa.</p>
+                <img class="program-image" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=80" alt="Students learning to code on laptops">
+                <div class="program-card-body">
+                    <div class="program-icon">🖥️</div>
+                    <h3><a href="https://digitalskillsafrica.org/" target="_blank" rel="noopener">Digital Skills</a></h3>
+                    <p>Learn coding, web design, and digital marketing to thrive in the modern workplace, in association with Digital Skills Africa.</p>
+
+                    <ul class="program-meta">
+                        <li>📅 Duration: 12 Weeks</li>
+                        <li>📈 Level: Beginner</li>
+                        <li>🗓️ Starts: 3 August 2026</li>
+                    </ul>
+
+                    <p class="program-learn-label">What You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
+                </div>
             </div>
 
             <div class="program-card">
-                <h3><a href="https://seedacademy.co.za/accelerate-youth/">Entrepreneurship</a></h3>
-                <p>Develop business ideas, leadership skills, and financial literacy to start your own venture with seed academy.</p>
+                <img class="program-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80" alt="Young entrepreneurs in a business meeting">
+                <div class="program-card-body">
+                    <div class="program-icon">💡</div>
+                    <h3><a href="https://seedacademy.co.za/accelerate-youth/" target="_blank" rel="noopener">Entrepreneurship</a></h3>
+                    <p>Develop business ideas, leadership skills, and financial literacy to start your own venture with Seed Academy.</p>
+
+                    <ul class="program-meta">
+                        <li>📅 Duration: 8 Weeks</li>
+                        <li>📈 Level: Beginner – Intermediate</li>
+                        <li>🗓️ Starts: 17 August 2026</li>
+                    </ul>
+
+                    <p class="program-learn-label">You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>Business Planning</li>
+                        <li>Pitching</li>
+                        <li>Financial Literacy</li>
+                        <li>Leadership</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
+                </div>
             </div>
 
             <div class="program-card">
-                <h3><a href="https://www.swgc.co.za/">Vacational Training</a></h3>
-                <p>Gain hands-on experience in trades like carpentry, tailoring, and Engineering with SWGC.</p>
+                <img class="program-image" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Apprentice working with tools in a workshop">
+                <div class="program-card-body">
+                    <div class="program-icon">🛠️</div>
+                    <h3><a href="https://www.swgc.co.za/" target="_blank" rel="noopener">Vocational Training</a></h3>
+                    <p>Gain hands-on experience in trades like carpentry, tailoring, and engineering with SWGC.</p>
+
+                    <ul class="program-meta">
+                        <li>📅 Duration: 16 Weeks</li>
+                        <li>📈 Level: Beginner</li>
+                        <li>🗓️ Starts: 1 September 2026</li>
+                    </ul>
+
+                    <p class="program-learn-label">You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>Carpentry</li>
+                        <li>Tailoring</li>
+                        <li>Basic Engineering</li>
+                        <li>Workshop Safety</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
+                </div>
             </div>
 
             <div class="program-card">
-                <h3><a href="https://www.za.logicalis.com/">IT</a></h3>
-                <p>Meet industry giants with the most leading technology knowlegde and expertise through logicalisSA.</p>
+                <img class="program-image" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" alt="IT professionals working in a server room">
+                <div class="program-card-body">
+                    <div class="program-icon">🌐</div>
+                    <h3><a href="https://www.za.logicalis.com/" target="_blank" rel="noopener">IT</a></h3>
+                    <p>Meet industry experts and gain leading technology knowledge through Logicalis SA.</p>
+
+                    <ul class="program-meta">
+                        <li>📅 Duration: 10 Weeks</li>
+                        <li>📈 Level: Intermediate</li>
+                        <li>🗓️ Starts: 14 September 2026</li>
+                    </ul>
+
+                    <p class="program-learn-label">You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>Networking</li>
+                        <li>Cloud Basics</li>
+                        <li>IT Support</li>
+                        <li>Cybersecurity Fundamentals</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
+                </div>
             </div>
+
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Youth Skills Development Initiative. All rights reserved.</p>
     </footer>
+    <button id="backToTop" aria-label="Back to top">&uarr;</button>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
