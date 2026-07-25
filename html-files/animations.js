@@ -7,7 +7,31 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   initStatCounters();
+  initFadeInOnScroll();
 });
+
+/* ---------------------------------------------------------
+   Fade-in on scroll — any element with class "fade-in" starts
+   slightly translated and transparent, then animates to full
+   opacity/position once it enters the viewport.
+   --------------------------------------------------------- */
+function initFadeInOnScroll() {
+  const elements = document.querySelectorAll('.fade-in');
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  elements.forEach(function (el) {
+    observer.observe(el);
+  });
+}
 
 function initStatCounters() {
   const counters = document.querySelectorAll('.stat-number');
