@@ -8,6 +8,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   initStatCounters();
   initFadeInOnScroll();
+  initTypingEffect();
 });
 
 /* ---------------------------------------------------------
@@ -31,6 +32,45 @@ function initFadeInOnScroll() {
   elements.forEach(function (el) {
     observer.observe(el);
   });
+}
+
+/* ---------------------------------------------------------
+   Typing effect — types out the text of an element with
+   id="typingText" character by character, with a blinking
+   cursor. Respects prefers-reduced-motion by just showing
+   the full text instantly.
+   --------------------------------------------------------- */
+function initTypingEffect() {
+  const el = document.getElementById('typingText');
+  if (!el) return;
+
+  const fullText = el.textContent.trim();
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+
+  if (reduceMotion) {
+    el.textContent = fullText;
+    return;
+  }
+
+  el.textContent = '';
+  el.appendChild(cursor);
+
+  const CHAR_DELAY = 55; // ms per character
+  let i = 0;
+
+  function typeNext() {
+    if (i < fullText.length) {
+      cursor.insertAdjacentText('beforebegin', fullText.charAt(i));
+      i++;
+      setTimeout(typeNext, CHAR_DELAY);
+    }
+  }
+
+  typeNext();
 }
 
 function initStatCounters() {

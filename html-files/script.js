@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initStickyNavbar();
   initActiveLink();
   initBackToTop();
+  initDarkMode();
 });
 
 /* ---------------------------------------------------------
@@ -111,5 +112,50 @@ function initBackToTop() {
 
   btn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ---------------------------------------------------------
+   5. Dark mode — toggles a data-theme attribute on <html>,
+      remembers the choice in localStorage, and falls back to
+      the visitor's OS-level preference on their first visit.
+   --------------------------------------------------------- */
+function initDarkMode() {
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const STORAGE_KEY = 'ysd-theme';
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    if (toggle) {
+      toggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+      toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    }
+  }
+
+  // 1. Use a saved preference if there is one
+  let saved = null;
+  try {
+    saved = localStorage.getItem(STORAGE_KEY);
+  } catch (e) {
+    // localStorage may be unavailable (private browsing etc.) — fail silently
+  }
+
+  // 2. Otherwise fall back to the OS-level preference
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = saved || (prefersDark ? 'dark' : 'light');
+  applyTheme(initialTheme);
+
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function () {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    applyTheme(newTheme);
+    try {
+      localStorage.setItem(STORAGE_KEY, newTheme);
+    } catch (e) {
+      // ignore if storage isn't available
+    }
   });
 }

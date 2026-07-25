@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about the Youth Skills Development Initiative — our mission, our team, our story since 2020, and the communities we serve.">
+    <meta name="description" content="Explore our training programs: Digital Skills, Entrepreneurship, Vocational Training, and IT — free, hands-on courses for young people.">
     <meta name="keywords" content="youth skills, youth development, digital skills, entrepreneurship training, vocational training, South Africa, job training">
-    <link rel="canonical" href="https://youthskillsdevelopment.netlify.app/about.html">
+    <link rel="canonical" href="https://youthskillsdevelopment.netlify.app/programs.html">
 
-    <meta property="og:title" content="Youth Skills Development - About">
-    <meta property="og:description" content="Learn about the Youth Skills Development Initiative — our mission, our team, our story since 2020, and the communities we serve.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Youth Skills Development - Programs">
+    <meta property="og:description" content="Explore our training programs: Digital Skills, Entrepreneurship, Vocational Training, and IT — free, hands-on courses for young people.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://youthskillsdevelopment.netlify.app/about.html">
+    <meta property="og:url" content="https://youthskillsdevelopment.netlify.app/programs.html">
     <meta property="og:image" content="https://youthskillsdevelopment.netlify.app/images/og-image.jpg">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>Youth Skills Development - About</title>
+    <title>Youth Skills Development - Programs</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <h1>Youth Skills Development</h1>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="true">🌙 Dark</button>
         <nav>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
@@ -29,153 +31,121 @@
             </button>
             <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="programs.html">Programs</a></li>
+                <li><a href="programs.html" class="active">Programs</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main-content">
 
-    <section id="about">
-        <div class="about-container">
-            <h2 class="fade-in">About Us</h2>
-            <p class="fade-in">
-                The Youth Skills Development Initiative is dedicated to empowering young people
-                through education, innovation, and mentorship. We believe that every youth deserves
-                the opportunity to build practical skills and achieve their full potential.
-            </p>
+    <section id="programs">
+        <h2>Our Programs</h2>
+        <p class="programs-intro">Hands-on training designed to build real, employable skills — pick a path and get started.</p>
 
-            <p class="fade-in">
-                Since our founding in 2020, we have trained hundreds of youth in fields such as
-                digital literacy, entrepreneurship, and vocational skills. Our programs aim to reduce
-                unemployment and promote self-sustainability among young individuals.
-            </p>
+        <div class="program-container">
 
-            <div class="about-grid">
-                <div class="about-card fade-in">
-                    <h3>Our Mission</h3>
-                    <p>To equip youth with essential skills that enhance employability, creativity, and innovation.</p>
-                </div>
-                <div class="about-card fade-in">
-                    <h3>Our Vision</h3>
-                    <p>To build a generation of skilled, confident, and empowered youth ready to shape the future.</p>
-                </div>
-                <div class="about-card fade-in">
-                    <h3>Our Values</h3>
-                    <ul>
-                        <li>Integrity</li>
-                        <li>Innovation</li>
-                        <li>Inclusivity</li>
-                        <li>Commitment</li>
+            <div class="program-card fade-in">
+                <img class="program-image" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=80" alt="Students learning to code on laptops" loading="lazy">
+                <div class="program-card-body">
+                    <div class="program-icon">🖥️</div>
+                    <h3><a href="https://digitalskillsafrica.org/" target="_blank" rel="noopener">Digital Skills</a></h3>
+                    <p>Learn coding, web design, and digital marketing to thrive in the modern workplace, in association with Digital Skills Africa.</p>
+
+                    <ul class="program-meta">
+                        <li>📅 Duration: 12 Weeks</li>
+                        <li>📈 Level: Beginner</li>
+                        <li>🗓️ Starts: 3 August 2026</li>
                     </ul>
+
+                    <p class="program-learn-label">You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Director's Message -->
-    <section id="director" class="director-section">
-        <div class="director-container fade-in">
-            <img class="director-photo" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80" alt="Portrait of the Executive Director">
-            <div class="director-message">
-                <h2>A Message From Our Director</h2>
-                <p>
-                    "When we started this initiative in 2020, our goal was simple: give young people
-                    the tools they need to build their own futures. Every student who walks through
-                    our doors reminds us why this work matters. Skills change lives — and confident,
-                    capable youth change communities."
-                </p>
-                <p class="director-name">— Executive Director, Youth Skills Development Initiative</p>
-            </div>
-        </div>
-    </section>
+            <div class="program-card fade-in">
+                <img class="program-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80" alt="Young entrepreneurs in a business meeting" loading="lazy">
+                <div class="program-card-body">
+                    <div class="program-icon">💡</div>
+                    <h3><a href="https://seedacademy.co.za/accelerate-youth/" target="_blank" rel="noopener">Entrepreneurship</a></h3>
+                    <p>Develop business ideas, leadership skills, and financial literacy to start your own venture with Seed Academy.</p>
 
-    <!-- Timeline -->
-    <section id="timeline" class="timeline-section">
-        <h2 class="fade-in">Our Journey</h2>
-        <div class="timeline">
-            <div class="timeline-item fade-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h4>2020</h4>
-                    <p>Youth Skills Development Initiative is founded with a single digital literacy pilot program.</p>
+                    <ul class="program-meta">
+                        <li>📅 Duration: 8 Weeks</li>
+                        <li>📈 Level: Beginner–Intermediate</li>
+                        <li>🗓️ Starts: 17 August 2026</li>
+                    </ul>
+
+                    <p class="program-learn-label">You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>Business Planning</li>
+                        <li>Pitching</li>
+                        <li>Financial Literacy</li>
+                        <li>Leadership</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
                 </div>
             </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h4>2021</h4>
-                    <p>Expanded into vocational training, partnering with local trade schools.</p>
+
+            <div class="program-card fade-in">
+                <img class="program-image" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Apprentice working with tools in a workshop" loading="lazy">
+                <div class="program-card-body">
+                    <div class="program-icon">🛠️</div>
+                    <h3><a href="https://www.swgc.co.za/" target="_blank" rel="noopener">Vocational Training</a></h3>
+                    <p>Gain hands-on experience in trades like carpentry, tailoring, and engineering with SWGC.</p>
+
+                    <ul class="program-meta">
+                        <li>📅 Duration: 16 Weeks</li>
+                        <li>📈 Level: Beginner</li>
+                        <li>🗓️ Starts: 1 September 2026</li>
+                    </ul>
+
+                    <p class="program-learn-label">You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>Carpentry</li>
+                        <li>Tailoring</li>
+                        <li>Basic Engineering</li>
+                        <li>Workshop Safety</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
                 </div>
             </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h4>2023</h4>
-                    <p>Launched the Entrepreneurship track and crossed 300 students trained.</p>
+
+            <div class="program-card fade-in">
+                <img class="program-image" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80" alt="IT professionals working in a server room" loading="lazy">
+                <div class="program-card-body">
+                    <div class="program-icon">🌐</div>
+                    <h3><a href="https://www.za.logicalis.com/" target="_blank" rel="noopener">IT</a></h3>
+                    <p>Meet industry experts and gain leading technology knowledge through Logicalis SA.</p>
+
+                    <ul class="program-meta">
+                        <li>📅 Duration: 10 Weeks</li>
+                        <li>📈 Level: Intermediate</li>
+                        <li>🗓️ Starts: 14 September 2026</li>
+                    </ul>
+
+                    <p class="program-learn-label">You'll learn:</p>
+                    <ul class="program-skills">
+                        <li>Networking</li>
+                        <li>Cloud Basics</li>
+                        <li>IT Support</li>
+                        <li>Cybersecurity Fundamentals</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn program-btn">Apply Now</a>
                 </div>
             </div>
-            <div class="timeline-item fade-in">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h4>2025</h4>
-                    <p>Reached 500+ students trained across 15 communities, with a 95% employment rate among graduates.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Team -->
-    <section id="team" class="team-section">
-        <h2 class="fade-in">Meet the Team</h2>
-        <div class="team-grid">
-            <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80" alt="Portrait of the Programs Manager">
-                <h4>Programs Manager</h4>
-                <p>Oversees curriculum design and partner relationships across all training tracks.</p>
-            </div>
-            <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=300&q=80" alt="Portrait of the Community Outreach Lead">
-                <h4>Community Outreach Lead</h4>
-                <p>Builds relationships with local communities and identifies youth ready to join our programs.</p>
-            </div>
-            <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=300&q=80" alt="Portrait of the Lead Instructor">
-                <h4>Lead Instructor, Digital Skills</h4>
-                <p>Teaches coding and digital marketing, and mentors students into their first tech roles.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories -->
-    <section id="stories" class="stories-section">
-        <h2 class="fade-in">Success Stories</h2>
-        <div class="stories-grid">
-            <div class="story-card fade-in">
-                <p class="story-quote">"This program gave me the confidence and coding skills to land my first junior developer role."</p>
-                <p class="story-author">— Digital Skills Graduate, 2024</p>
-            </div>
-            <div class="story-card fade-in">
-                <p class="story-quote">"I started my own tailoring business six months after finishing the vocational training track."</p>
-                <p class="story-author">— Vocational Training Graduate, 2023</p>
-            </div>
-            <div class="story-card fade-in">
-                <p class="story-quote">"The entrepreneurship program taught me how to turn my idea into a real, functioning business."</p>
-                <p class="story-author">— Entrepreneurship Graduate, 2025</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners -->
-    <section id="partners" class="partners-section">
-        <h2 class="fade-in">Our Partner Organizations</h2>
-        <div class="partners-grid fade-in">
-            <a href="https://digitalskillsafrica.org/" target="_blank" rel="noopener">Digital Skills Africa</a>
-            <a href="https://seedacademy.co.za/accelerate-youth/" target="_blank" rel="noopener">Seed Academy</a>
-            <a href="https://www.swgc.co.za/" target="_blank" rel="noopener">SWGC</a>
-            <a href="https://www.za.logicalis.com/" target="_blank" rel="noopener">Logicalis SA</a>
         </div>
     </section>
     </main>
@@ -236,11 +206,12 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Youth Skills Development Initiative. All rights reserved.</p>
+            <p>&copy; 2025 Youth Skills Development Initiative. All rights reserved.</p>
         </div>
     </footer>
     <button id="backToTop" aria-label="Back to top">&uarr;</button>
 
+    <script src="js/loading.js"></script>
     <script src="js/script.js"></script>
     <script src="js/newsletter.js"></script>
     <script src="js/animations.js"></script>

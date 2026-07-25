@@ -1,10 +1,39 @@
+/* =========================================================
+   Theme variables — light (default) and dark
+   ========================================================= */
+:root {
+    --bg: #ffffff;
+    --text: #333333;
+    --surface: #ffffff;
+    --surface-alt: #f4f4f4;
+    --surface-translucent: #ffffffc5;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --brand: #00992ec5;
+    --brand-dark: #007a25c5;
+}
+
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #e6e6e6;
+    --surface: #1e1e1e;
+    --surface-alt: #181818;
+    --surface-translucent: #1e1e1ecc;
+    --input-bg: #2a2a2a;
+    --input-border: #444444;
+    --card-shadow: rgba(0, 0, 0, 0.4);
+}
+
 /* General styling */
 body {
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     line-height: 1.6;
     font-size: medium;
-    color: #333;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -285,7 +314,7 @@ nav ul li a.active {
 }
 
 .program-card {
-    background: #ffffffc5;
+    background: var(--surface-translucent);
     border-radius: 10px;
     width: 280px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -385,7 +414,9 @@ input, textarea {
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg);
+    color: var(--text);
 }
 
 button {
@@ -421,30 +452,30 @@ footer {
 #about {
     background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94') no-repeat center/cover;
     padding: 60px 20px;
-    background-color: #f9f9f9;
+    background-color: var(--surface-alt);
     text-align: center;
 }
 
 .about-container {
-    color: #f9f9f9;
+    color: var(--text);
     max-width: 1000px;
     margin: auto;
 }
 
 .about-container h2 {
-    color: antiquewhite;
+    color: var(--brand);
     margin-bottom: 20px;
 }
 
 .about-container p {
-    color: #020202c5;
+    color: var(--text);
     font-size: 1.1em;
     margin-bottom: 20px;
 }
 
 .about-grid {
     display: flex;
-    color: #111010;
+    color: var(--text);
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -452,7 +483,7 @@ footer {
 }
 
 .about-card {
-    background: white;
+    background: var(--surface);
     padding: 20px;
     border-radius: 10px;
     width: 280px;
@@ -638,7 +669,7 @@ textarea:focus-visible {
    ========================================================= */
 
 .director-section {
-    background-color: #f4f4f4;
+    background-color: var(--surface-alt);
     padding: 60px 20px;
 }
 
@@ -666,7 +697,7 @@ textarea:focus-visible {
 }
 
 .director-message p {
-    color: #333;
+    color: var(--text);
 }
 
 .director-name {
@@ -682,7 +713,7 @@ textarea:focus-visible {
 .timeline-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--bg);
 }
 
 .timeline-section h2 {
@@ -726,7 +757,7 @@ textarea:focus-visible {
 
 .timeline-content p {
     margin: 0;
-    color: #333;
+    color: var(--text);
 }
 
 /* =========================================================
@@ -736,7 +767,7 @@ textarea:focus-visible {
 .team-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: var(--surface-alt);
 }
 
 .team-section h2 {
@@ -752,7 +783,7 @@ textarea:focus-visible {
 }
 
 .team-card {
-    background: white;
+    background: var(--surface);
     border-radius: 10px;
     padding: 20px;
     width: 220px;
@@ -774,7 +805,7 @@ textarea:focus-visible {
 
 .team-card p {
     font-size: 0.9em;
-    color: #333;
+    color: var(--text);
     margin: 0;
 }
 
@@ -829,7 +860,7 @@ textarea:focus-visible {
 .partners-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: white;
+    background-color: var(--bg);
 }
 
 .partners-section h2 {
@@ -876,8 +907,8 @@ textarea:focus-visible {
 
 .contact-info {
     flex: 1 1 280px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #222;
+    background: var(--surface-translucent);
+    color: var(--text);
     border-radius: 10px;
     padding: 25px;
 }
@@ -1064,5 +1095,102 @@ footer {
 
     .contact-layout {
         flex-direction: column;
+    }
+}
+
+/* =========================================================
+   Dark mode toggle button
+   ========================================================= */
+
+.theme-toggle {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 0.95em;
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        right: 60px;
+        font-size: 0.85em;
+        padding: 3px 8px;
+    }
+}
+
+/* =========================================================
+   Loading screen (preloader)
+   ========================================================= */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    z-index: 3000;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--surface-alt);
+    border-top-color: var(--brand);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.preloader-text {
+    color: var(--text);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .preloader-spinner {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   Typing effect (hero heading)
+   ========================================================= */
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: currentColor;
+    margin-left: 2px;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typing-cursor {
+        animation: none;
     }
 }

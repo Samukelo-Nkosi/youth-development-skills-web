@@ -1,0 +1,37 @@
+# Netlify configuration for Youth Skills Development Initiative
+#
+# Enables Netlify's built-in Post Processing: automatic minification
+# of HTML, CSS, and JS, plus image compression, on every deploy.
+# No build step or extra dependencies required.
+
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Long cache lifetime for versioned static assets (safe since filenames
+# don't change unless content does — Netlify handles cache invalidation)
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
