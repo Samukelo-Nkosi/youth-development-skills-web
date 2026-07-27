@@ -174,8 +174,8 @@ Aspiring Software Developer | Back-end Developer | ICT Student | Azure Fundament
 
 ### Connect with me
 
-- GitHub: https://github.com/YourUsername
-- LinkedIn: https://linkedin.com/in/YourLinkedIn
+- GitHub: https://github.com/Samukelo-Nkosi
+- LinkedIn: https://linkedin.com/in/samukelo-nkosi-167b41324/
 - Email: knkosi812@gmail.com
 
 ---
