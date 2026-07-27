@@ -50,16 +50,17 @@
   // Validate a single field and reflect the result in the UI
   function validateField(key) {
     const field = fields[key];
+    if (!field.el) return true; // field not present on this page — nothing to validate
     const error = field.validate(field.el.value);
 
     if (error) {
       field.el.classList.add('invalid');
       field.el.setAttribute('aria-invalid', 'true');
-      field.errorEl.textContent = error;
+      if (field.errorEl) field.errorEl.textContent = error;
     } else {
       field.el.classList.remove('invalid');
       field.el.removeAttribute('aria-invalid');
-      field.errorEl.textContent = '';
+      if (field.errorEl) field.errorEl.textContent = '';
     }
 
     return !error;
@@ -69,6 +70,7 @@
   // (so the message clears as soon as the user fixes it)
   Object.keys(fields).forEach(function (key) {
     const field = fields[key];
+    if (!field.el) return;
     field.el.addEventListener('blur', function () {
       validateField(key);
     });

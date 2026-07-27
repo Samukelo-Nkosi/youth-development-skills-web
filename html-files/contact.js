@@ -40,9 +40,17 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Don't submit anything if the honeypot field was filled in (bot)
+    // Don't actually send anything if the honeypot field was filled in
+    // (a sign of a bot) — but show the same success message a real
+    // submission would get. This matters for two reasons: it doesn't
+    // tip off bots that they were caught, and it protects legitimate
+    // visitors whose browser autofill or form-fill extension happened
+    // to populate the hidden field — they still get clear feedback
+    // instead of silently nothing happening when they click Send.
     const honeypot = form.querySelector('input[name="bot-field"]');
     if (honeypot && honeypot.value) {
+      showStatus('Thanks for reaching out! We\'ll get back to you soon.', 'success');
+      form.reset();
       return;
     }
 

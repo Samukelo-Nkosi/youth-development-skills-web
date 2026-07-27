@@ -40,7 +40,7 @@ header {
     background-color: #00992ec5;
     color: white;
     padding: 1em 0;
-    size: 50px;
+    size: 20px;
     text-align: center;
     position: sticky;
     top: 0;
@@ -347,6 +347,7 @@ nav ul li a.active {
 .program-icon {
     font-size: 1.8em;
     margin-bottom: 5px;
+    color: var(--brand);
 }
 
 .program-card h3 {
@@ -364,6 +365,12 @@ nav ul li a.active {
 
 .program-meta li {
     margin-bottom: 4px;
+}
+
+.program-meta li i {
+    color: var(--brand);
+    width: 1.1em;
+    text-align: center;
 }
 
 .program-learn-label {
@@ -645,19 +652,22 @@ textarea:focus-visible {
    Fade-in on scroll
    ========================================================= */
 
-.fade-in {
+/* Visible by default. JS adds .fade-in-armed only once it has successfully
+   set up the observer that will reveal the element again — so if the script
+   fails to load or errors out, content is never left permanently invisible. */
+.fade-in.fade-in-armed {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.fade-in.is-visible {
+.fade-in.fade-in-armed.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .fade-in {
+    .fade-in.fade-in-armed {
         opacity: 1;
         transform: none;
         transition: none;
@@ -841,6 +851,15 @@ textarea:focus-visible {
     text-align: left;
 }
 
+.story-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
 .story-quote {
     font-style: italic;
     margin: 0 0 12px;
@@ -931,6 +950,14 @@ textarea:focus-visible {
     margin-bottom: 12px;
 }
 
+.contact-icon,
+.contact-details li i,
+.social-links a i {
+    color: var(--brand);
+    width: 1.1em;
+    text-align: center;
+}
+
 .contact-details a {
     color: #00742bc5;
     text-decoration: none;
@@ -944,7 +971,7 @@ textarea:focus-visible {
 .social-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 14px;
     margin-bottom: 20px;
 }
 
@@ -953,11 +980,19 @@ textarea:focus-visible {
     color: #00742bc5;
     font-weight: bold;
     font-size: 0.9em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .map-embed {
     border-radius: 8px;
     overflow: hidden;
+}
+
+.map-embed iframe {
+    border: 0;
+    display: block;
 }
 
 form {
@@ -1115,6 +1150,9 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .theme-toggle:hover {
@@ -1125,7 +1163,11 @@ footer {
     .theme-toggle {
         right: 60px;
         font-size: 0.85em;
-        padding: 3px 8px;
+        padding: 5px 8px;
+    }
+
+    .theme-toggle-label {
+        display: none;
     }
 }
 
@@ -1192,5 +1234,114 @@ footer {
 @media (prefers-reduced-motion: reduce) {
     .typing-cursor {
         animation: none;
+    }
+}
+
+/* =========================================================
+   Photo Gallery + Lightbox
+   ========================================================= */
+
+.gallery-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--surface-alt);
+}
+
+.gallery-section h2 {
+    color: var(--brand);
+    margin-bottom: 10px;
+}
+
+.gallery-intro {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    color: var(--text);
+    opacity: 0.85;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+    background: var(--surface);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px var(--card-shadow);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 30px;
+    z-index: 4000;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox img {
+    max-width: min(90vw, 900px);
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    max-width: 600px;
+    font-size: 0.95em;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

@@ -20,6 +20,10 @@ function initFadeInOnScroll() {
   const elements = document.querySelectorAll('.fade-in');
   if (!elements.length) return;
 
+  // Not supported in this browser? Leave content visible rather than risk
+  // hiding it with no way to reveal it again.
+  if (typeof IntersectionObserver === 'undefined') return;
+
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -30,6 +34,9 @@ function initFadeInOnScroll() {
   }, { threshold: 0.15 });
 
   elements.forEach(function (el) {
+    // Only hide the element once it's actually being observed —
+    // guarantees anything hidden also has a way to become visible again.
+    el.classList.add('fade-in-armed');
     observer.observe(el);
   });
 }

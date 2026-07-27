@@ -8,21 +8,24 @@
     <link rel="canonical" href="https://youthskillsdevelopment.netlify.app/contact.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Youth Skills Development - Contact">
-    <meta property="og:description" content="Get in touch with the Youth Skills Development Initiative. Find our address, phone number, office hours, and send us a message.">
+    <meta property="og:title" content="Lathebe Skills Development">
+    <meta property="og:description" content="Get in touch with the Lathebe Skills Development Initiative. Find our address, phone number, office hours, and send us a message.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://youthskillsdevelopment.netlify.app/contact.html">
     <meta property="og:image" content="https://youthskillsdevelopment.netlify.app/images/og-image.jpg">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>Youth Skills Development - Contact</title>
+
+    <!-- Font Awesome icon set -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Lathebe Skills Development</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header>
-        <h1>Youth Skills Development</h1>
-        <button id="themeToggle" class="theme-toggle" aria-pressed="false">🌙 Dark</button>
+        <h1>Lathebe Skills Development</h1>
+        <button id="themeToggle" class="theme-toggle" aria-pressed="false"><i class="fa-solid fa-moon" aria-hidden="true"></i> <span class="theme-toggle-label">Dark</span></button>
         <nav>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
@@ -49,29 +52,29 @@
                 <h3>Get in Touch</h3>
                 <ul class="contact-details">
                     <li>
-                        <span class="contact-icon" aria-hidden="true">📍</span>
+                        <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
                         <span>123 Main Street, Johannesburg, Gauteng, South Africa</span>
                     </li>
                     <li>
-                        <span class="contact-icon" aria-hidden="true">📞</span>
+                        <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
                         <a href="tel:+27111234567">+27 11 123 4567</a>
                     </li>
                     <li>
-                        <span class="contact-icon" aria-hidden="true">✉️</span>
+                        <span class="contact-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
                         <a href="mailto:info@youthskillsdevelopment.org">info@youthskillsdevelopment.org</a>
                     </li>
                     <li>
-                        <span class="contact-icon" aria-hidden="true">🕒</span>
+                        <span class="contact-icon" aria-hidden="true"><i class="fa-regular fa-clock"></i></span>
                         <span>Mon–Fri: 8:00 AM – 5:00 PM</span>
                     </li>
                 </ul>
 
                 <h3>Follow Us</h3>
                 <div class="social-links">
-                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">📘 Facebook</a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📷 Instagram</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">💼 LinkedIn</a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">▶️ YouTube</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</a>
                 </div>
 
                 <div class="map-embed">
@@ -80,7 +83,6 @@
                         src="https://www.google.com/maps?q=Johannesburg,South+Africa&output=embed"
                         width="100%"
                         height="220"
-                        style="border:0;"
                         allowfullscreen=""
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
@@ -102,30 +104,30 @@
 
             <!-- Honeypot field: hidden from real users, catches spam bots -->
             <p class="hidden-field">
-                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
             </p>
 
             <div class="form-group">
                 <label for="name" class="visually-hidden">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="text" id="name" name="name" placeholder="Your Name" required maxlength="100" autocomplete="name">
                 <span class="error-message" id="nameError"></span>
             </div>
 
             <div class="form-group">
                 <label for="program" class="visually-hidden">Your Program</label>
-                <input type="text" id="program" name="program" placeholder="Your Program" required>
+                <input type="text" id="program" name="program" placeholder="Your Program" required maxlength="100">
                 <span class="error-message" id="programError"></span>
             </div>
 
             <div class="form-group">
                 <label for="email" class="visually-hidden">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required maxlength="254" autocomplete="email">
                 <span class="error-message" id="emailError"></span>
             </div>
 
             <div class="form-group">
                 <label for="message" class="visually-hidden">Your Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required maxlength="2000"></textarea>
                 <span class="error-message" id="messageError"></span>
             </div>
 
@@ -143,13 +145,13 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col footer-brand">
-                <h3>Youth Skills Development</h3>
+                <h3>Lathebe Skills Development</h3>
                 <p>Empowering young people through education, mentorship, and real-world opportunities since 2020.</p>
                 <div class="footer-social">
-                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">▶️</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
                 </div>
             </div>
 
@@ -167,6 +169,7 @@
                 <h4>Resources</h4>
                 <ul>
                     <li><a href="about.html#team">Our Team</a></li>
+                    <li><a href="about.html#gallery">Photo Gallery</a></li>
                     <li><a href="about.html#timeline">Our Story</a></li>
                     <li><a href="about.html#stories">Success Stories</a></li>
                     <li><a href="about.html#partners">Our Partners</a></li>
@@ -176,30 +179,33 @@
             <div class="footer-col">
                 <h4>Contact</h4>
                 <ul class="footer-contact">
-                    <li>📍 123 Main Street, Johannesburg, South Africa</li>
-                    <li><a href="tel:+27111234567">📞 +27 11 123 4567</a></li>
-                    <li><a href="mailto:info@youthskillsdevelopment.org">✉️ info@youthskillsdevelopment.org</a></li>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 123 Main Street, Johannesburg, South Africa</li>
+                    <li><a href="tel:+27111234567"><i class="fa-solid fa-phone" aria-hidden="true"></i> +27 11 123 4567</a></li>
+                    <li><a href="mailto:info@youthskillsdevelopment.org"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@youthskillsdevelopment.org</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h4>Newsletter</h4>
                 <p>Get updates on new programs and events.</p>
-                <form id="newsletterForm" class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+                <form id="newsletterForm" class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="nl-bot-field">
                     <input type="hidden" name="form-name" value="newsletter">
+                    <p class="hidden-field">
+                        <label>Don't fill this out if you're human: <input name="nl-bot-field" tabindex="-1" autocomplete="off"></label>
+                    </p>
                     <label for="newsletterEmail" class="visually-hidden">Email address</label>
-                    <input type="email" id="newsletterEmail" name="email" placeholder="Your email" required>
-                    <button type="submit">Subscribe</button>
+                    <input type="email" id="newsletterEmail" name="email" placeholder="Your email" required maxlength="254" autocomplete="email">
+                    <button type="submit" id="newsletterSubmitBtn">Subscribe</button>
                 </form>
                 <p id="newsletterStatus" class="newsletter-status" role="status" aria-live="polite"></p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Youth Skills Development Initiative. All rights reserved.</p>
+            <p>&copy; 2026 Lathebe Skills Development Initiative. All rights reserved.</p>
         </div>
     </footer>
-    <button id="backToTop" aria-label="Back to top">&uarr;</button>
+    <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
 
     <script src="js/loading.js"></script>
     <script src="js/script.js"></script>

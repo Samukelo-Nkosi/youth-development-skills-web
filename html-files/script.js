@@ -128,7 +128,14 @@ function initDarkMode() {
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     if (toggle) {
-      toggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+      const icon = toggle.querySelector('i');
+      const label = toggle.querySelector('.theme-toggle-label');
+      if (icon) {
+        icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      }
+      if (label) {
+        label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+      }
       toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
     }
   }

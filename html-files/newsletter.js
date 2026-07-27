@@ -11,6 +11,7 @@
 
   const statusEl = document.getElementById('newsletterStatus');
   const emailInput = document.getElementById('newsletterEmail');
+  const submitBtn = document.getElementById('newsletterSubmitBtn');
 
   function encode(data) {
     return Object.keys(data)
@@ -25,8 +26,22 @@
     statusEl.className = 'newsletter-status ' + type;
   }
 
+  function setLoading(isLoading) {
+    if (submitBtn) submitBtn.disabled = isLoading;
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    // Same honeypot pattern as contact.js: don't actually send anything
+    // if the hidden field was filled in, but still show success so a
+    // legitimate visitor caught by autofill isn't left with no feedback.
+    const honeypot = form.querySelector('input[name="nl-bot-field"]');
+    if (honeypot && honeypot.value) {
+      showStatus('Thanks for subscribing!', 'success');
+      form.reset();
+      return;
+    }
 
     const email = emailInput.value.trim();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,6 +50,8 @@
       showStatus('Please enter a valid email address.', 'error');
       return;
     }
+
+    setLoading(true);
 
     const formData = new FormData(form);
     const payload = {};
@@ -54,6 +71,9 @@
       })
       .catch(function () {
         showStatus('Something went wrong. Please try again later.', 'error');
+      })
+      .finally(function () {
+        setLoading(false);
       });
   });
 })();
